@@ -1,2 +1,2 @@
-Playground-php
+Playground Php Framework
 ==============
