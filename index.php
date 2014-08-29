@@ -1,7 +1,7 @@
 <?php
 $ppf= include "/library/base.php";
 //$ppf->setBasePath("/ppf"); //Uncomment if not on root of site, change '/ppf' to your site folder
-$ppf->app_etize("db", "mysql:dbname=db", "root","root");//
+//$ppf->app_etize("db", "mysql:dbname=db", "root","root");//Uncomment and set db name
 $ppf->map('GET|POST', '/', 'home#index', 'home');
 $ppf->map('GET','/hello/[:name]','home#hello#uppercase');
 $ppf->map('GET', '/hello/', function(){ echo 'Hello world'; });
