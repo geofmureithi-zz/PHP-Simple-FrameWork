@@ -1,2 +1,2 @@
-Playground Php Framework
+PHP Simple Framework
 ==============
