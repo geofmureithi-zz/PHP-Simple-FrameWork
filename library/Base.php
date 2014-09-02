@@ -24,7 +24,7 @@ class Core {
 	}
     public function read($name)
     {
-        return self::$confArray[$name];
+        return @self::$confArray[$name];
     }
     public function put($name, $value)
     {
@@ -337,6 +337,7 @@ class Base extends Router{
         return self::$instance;
     }
 	public function play(){
+		$this->setBasePath(rtrim($_SERVER['BASE'], "/")); //Set Base path
 		$route= $this->match();
 		$this->put('PARAMS',$route['params']);
 		$this->put('TARGET',$route['target']);
@@ -350,6 +351,20 @@ class Base extends Router{
 			call_user_func($target, $this, $route['params'] );
 		}
 		
+	}
+	function url_origin($s, $use_forwarded_host=false){
+		$ssl = (!empty($s['HTTPS']) && $s['HTTPS'] == 'on') ? true:false;
+		$sp = strtolower($s['SERVER_PROTOCOL']);
+		$protocol = substr($sp, 0, strpos($sp, '/')) . (($ssl) ? 's' : '');
+		$port = $s['SERVER_PORT'];
+		$port = ((!$ssl && $port=='80') || ($ssl && $port=='443')) ? '' : ':'.$port;
+		$host = ($use_forwarded_host && isset($s['HTTP_X_FORWARDED_HOST'])) ? $s['HTTP_X_FORWARDED_HOST'] : (isset($s['HTTP_HOST']) ? $s['HTTP_HOST'] : null);
+		$host = isset($host) ? $host : $s['SERVER_NAME'] . $port;
+		return $protocol . '://' . $host;
+	}
+	function url(){
+		$s=$_SERVER;
+		return $this->url_origin($s, false) . $s['REQUEST_URI'];
 	}
 
 }
