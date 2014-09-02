@@ -1,7 +1,7 @@
 PHP Simple Framework
 ==============
 Get started Easily
-
+```php
     <?php
     $ppf= include "/library/base.php";
     $ppf->map('GET|POST', '/', function(){ 
