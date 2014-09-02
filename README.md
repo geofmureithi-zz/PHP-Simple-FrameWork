@@ -21,7 +21,7 @@ Have a Database?
 								$user = $user->fetch();
 								var_dump($user);
 							});
-							```
+```
 Want to create a simple logo?
  ```php   
     $ppf->map('GET', '/images/logo.png', 
@@ -37,6 +37,6 @@ Want to create a simple logo?
 PHP-Simple-Framework is (inspired by [Sinatra](http://www.sinatrarb.com/))
 
 What does it use?
-([AltoRouter](https://github.com/dannyvankooten/AltoRouter/))
-([FluentPDO](http://fluentpdo.com/))
+*[AltoRouter](https://github.com/dannyvankooten/AltoRouter/)
+*[FluentPDO](http://fluentpdo.com/)
 
