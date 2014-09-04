@@ -1,0 +1,13 @@
+{
+    "name": "acemureithi/php-simple-framework",
+    "description": "Simple PHP Framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "acemureithi",
+            "email": "insert-your-email-here"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
