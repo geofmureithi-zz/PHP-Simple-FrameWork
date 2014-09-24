@@ -36,6 +36,6 @@ Want to create a simple logo?
 PHP-Simple-Framework is inspired by [Sinatra](http://www.sinatrarb.com/)
 
 What does it use?
-1. [AltoRouter](https://github.com/dannyvankooten/AltoRouter/)
-2. [FluentPDO](http://fluentpdo.com/)
+- [AltoRouter](https://github.com/dannyvankooten/AltoRouter/) 
+- [FluentPDO](http://fluentpdo.com/) 
 
