@@ -2,19 +2,18 @@ PHP Simple Framework
 ==============
 Get started Easily
 ```php
-    <?php
-    $ppf= include "/library/base.php";
-    $ppf->map('GET|POST', '/', function(){ 
-                                      echo 'Hello world'; 
-                                });
+    $ppf->map('GET', '/hello/', function()
+    {
+    echo 'Hello world';
+    });
 ```
 Have a Database?
 ```php
     <?php
     $ppf= include "/library/base.php";
     $ppf->app_etize("db", "mysql:dbname=dbname", "username","password"); // replace dbname, username, and password
-    $ppf->map('GET', '/user/[i:id]', 
-							function($ppf, $params){
+    $ppf->map('GET', '/user/[i:id]', function($ppf, $params)
+    {
 								$id= $params['id'];
 								$user = $ppf->db->select('users');
 								$user = $user->where('id= ?', $id);
